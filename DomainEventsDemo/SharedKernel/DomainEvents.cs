@@ -15,7 +15,7 @@ namespace DomainEventsDemo.SharedKernel
         }
 
         public static IContainer Container { get; set; }
-        public static void Register<T>(Action<T> callback) where T : IDomainEvent
+        public static void Register<T>(Action<T> callback) where T : DomainEvent
         {
             if (actions == null)
             {
@@ -29,7 +29,7 @@ namespace DomainEventsDemo.SharedKernel
             actions = null;
         }
 
-        public static void Raise<T>(T args) where T : IDomainEvent
+        public static void Raise<T>(T args) where T : DomainEvent
         {
             foreach (var handler in Container.GetAllInstances<IHandle<T>>())
             {

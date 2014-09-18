@@ -3,9 +3,9 @@ using DomainEventsDemo.SharedKernel;
 
 namespace DomainEventsDemo.Model.Events
 {
-    public class CounterIncrementedEvent : IDomainEvent
+    public class CounterIncrementedEvent : DomainEvent
     {
-        public DateTime DateTimeEventOccurred { get; private set; }
+        public override DateTime DateTimeEventOccurred { get; protected set; }
         public string CounterName { get; private set; }
         public int CounterCount { get; private set; }
         

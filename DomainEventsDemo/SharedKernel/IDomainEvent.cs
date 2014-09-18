@@ -2,8 +2,8 @@
 
 namespace DomainEventsDemo.SharedKernel
 {
-    public interface IDomainEvent
+    public abstract class DomainEvent
     {
-        DateTime DateTimeEventOccurred { get; }
+        public abstract DateTime DateTimeEventOccurred { get; protected set; }
     }
 }
