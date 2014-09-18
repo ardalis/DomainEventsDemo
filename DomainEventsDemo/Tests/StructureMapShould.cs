@@ -48,12 +48,13 @@ namespace DomainEventsDemo.Tests
         [Test]
         public void CallHandleOnTestHandlerWhenRaiseIsCalled()
         {
+            var testCounterName = "testCounterName" + Guid.NewGuid();
             DomainEvents.Container = _container;
             DomainEvents.ClearCallbacks();
-            var counter = new Counter("testCounterName");
+            var counter = new Counter(testCounterName);
             counter.Increment(); // should call TestHandler
 
-            Assert.AreEqual("testCounterName", TestHandlerHandledEvent.CounterName);
+            Assert.AreEqual(testCounterName, TestHandlerHandledEvent.CounterName);
         }
     }
 }
