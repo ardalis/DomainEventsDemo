@@ -5,6 +5,7 @@ using StructureMap;
 namespace DomainEventsDemo.SharedKernel
 {
     // https://gist.github.com/jbogard/54d6569e883f63afebc7
+    // http://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/
     public class DomainEventDispatcher : IDomainEventDispatcher
     {
         private readonly IContainer _container;
