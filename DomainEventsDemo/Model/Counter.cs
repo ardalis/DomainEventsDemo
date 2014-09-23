@@ -1,5 +1,6 @@
 ﻿using System;
 using DomainEventsDemo.Model.Events;
+using DomainEventsDemo.SharedKernel;
 
 namespace DomainEventsDemo.Model
 {
@@ -13,10 +14,11 @@ namespace DomainEventsDemo.Model
             Name = name;
         }
 
+        // Raise events directly from objects
         public void Increment()
         {
             Count++;
-            SharedKernel.DomainEvents.Raise(new CounterIncrementedEvent(this, DateTime.Now));
+            DomainEvents.Raise(new CounterIncrementedEvent(this, DateTime.Now));
         }
     }
 }
