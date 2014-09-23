@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using StructureMap;
 
-namespace DomainEventsDemo.SharedKernel
+namespace DomainEventsDemo.SharedKernel.StaticApproach
 {
     public static class DomainEvents
     {
         [ThreadStatic]
         private static List<Delegate> actions;
-
-        static DomainEvents()
-        {
-            Container = StructureMap.ObjectFactory.Container;
-        }
 
         public static IContainer Container { get; set; }
         public static void Register<T>(Action<T> callback) where T : DomainEvent
@@ -31,6 +26,10 @@ namespace DomainEventsDemo.SharedKernel
 
         public static void Raise<T>(T args) where T : DomainEvent
         {
+            if (Container == null)
+            {
+                throw new Exception("Set Container to the application IContainer.");
+            }
             foreach (var handler in Container.GetAllInstances<IHandle<T>>())
             {
                 handler.Handle(args);

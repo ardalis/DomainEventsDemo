@@ -16,6 +16,7 @@ namespace DomainEventsDemo.Model
             Name = name;
         }
 
+        // add events to collection; dispatched during save
         public void UpdateName(string newName)
         {
             Events.Add(new CustomerNameUpdatedEvent(Id, Name, newName));

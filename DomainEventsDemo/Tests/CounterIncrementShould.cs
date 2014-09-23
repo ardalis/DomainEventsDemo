@@ -1,7 +1,8 @@
 ﻿using DomainEventsDemo.Model;
 using DomainEventsDemo.Model.Events;
-using DomainEventsDemo.SharedKernel;
+using DomainEventsDemo.SharedKernel.StaticApproach;
 using NUnit.Framework;
+using StructureMap;
 
 namespace DomainEventsDemo.Tests
 {
@@ -9,6 +10,12 @@ namespace DomainEventsDemo.Tests
     public class CounterIncrementShould
     {
         private readonly string _testCounterName = "testcounter";
+
+        [SetUp]
+        public void SetUp()
+        {
+            DomainEvents.Container = new Container();
+        }
         [Test]
         public void IncreaseCounterBy1()
         {

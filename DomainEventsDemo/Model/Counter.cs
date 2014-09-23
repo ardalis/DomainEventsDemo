@@ -1,6 +1,6 @@
 ﻿using System;
 using DomainEventsDemo.Model.Events;
-using DomainEventsDemo.SharedKernel;
+using DomainEventsDemo.SharedKernel.StaticApproach;
 
 namespace DomainEventsDemo.Model
 {

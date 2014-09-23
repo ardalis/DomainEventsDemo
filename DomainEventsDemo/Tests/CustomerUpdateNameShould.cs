@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using DomainEventsDemo.Model;
 using DomainEventsDemo.Model.Events;
-using DomainEventsDemo.SharedKernel;
 using NUnit.Framework;
 
 namespace DomainEventsDemo.Tests

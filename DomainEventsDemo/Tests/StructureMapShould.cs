@@ -2,6 +2,7 @@
 using DomainEventsDemo.Model;
 using DomainEventsDemo.Model.Events;
 using DomainEventsDemo.SharedKernel;
+using DomainEventsDemo.SharedKernel.StaticApproach;
 using NUnit.Framework;
 using StructureMap;
 using StructureMap.Graph;
@@ -35,7 +36,7 @@ namespace DomainEventsDemo.Tests
                     scan.ConnectImplementationsToTypesClosing(typeof(IHandle<>));
                 });
             });
-
+            TestHandlerHandledEvent = null;
         }
 
         [Test]

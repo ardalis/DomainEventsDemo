@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using DomainEventsDemo.Model;
 using DomainEventsDemo.SharedKernel;
 
@@ -14,19 +13,21 @@ namespace DomainEventsDemo.Infrastructure.Data
             _domainEventDispatcher = domainEventDispatcher;
         }
 
-        private static IDictionary<int, Customer> _customers = new Dictionary<int, Customer>();
+        private IList<Customer> _customers = new List<Customer>();
 
-
-        public static IDictionary<int, Customer> Customers
+        public IList<Customer> Customers
         {
             get { return _customers; }
         }
 
+        // dispatches events, then saves
+        // could be done in a transaction, or events could fire only after
+        // successful save
         public void SaveChanges()
         {
             // dispatch events on any entities that have changes detected
             var changedCustomers = _customers;
-            foreach (var customer in changedCustomers.Values)
+            foreach (var customer in changedCustomers)
             {
                 foreach (var domainEvent in customer.Events)
                 {
