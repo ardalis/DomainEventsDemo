@@ -50,15 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Data\DbContext.cs" />
     <Compile Include="Model\Counter.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="SharedKernel\EntityBase.cs" />
     <Compile Include="Model\Events\CounterIncrementedEvent.cs" />
     <Compile Include="Model\Events\CustomerNameUpdatedEvent.cs" />
+    <Compile Include="SharedKernel\IDomainEventDispatcher.cs" />
     <Compile Include="SharedKernel\IHandle.cs" />
     <Compile Include="SharedKernel\DomainEvents.cs" />
     <Compile Include="SharedKernel\DomainEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\CounterIncrementShould - Copy.cs" />
     <Compile Include="Tests\StructureMapShould.cs" />
     <Compile Include="Tests\CounterIncrementShould.cs" />
   </ItemGroup>
