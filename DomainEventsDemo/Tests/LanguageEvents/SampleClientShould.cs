@@ -20,6 +20,5 @@ namespace DomainEventsDemo.Tests.LanguageEvents
             _sampleClient.UpdateCustomer("Steve");
             Assert.AreEqual("Customer name changed", _sampleClient.Output());
         }
-
     }
 }
