@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\Data\DbContext.cs" />
+    <Compile Include="LanguageEvents\Customer.cs" />
     <Compile Include="Model\Counter.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="SharedKernel\EntityBase.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\CustomerUpdateNameShould.cs" />
     <Compile Include="Tests\DbContextSaveChangesShould.cs" />
+    <Compile Include="Tests\LanguageEvents\CounterIncrementShould.cs" />
     <Compile Include="Tests\StructureMapShould.cs" />
     <Compile Include="Tests\CounterIncrementShould.cs" />
   </ItemGroup>
