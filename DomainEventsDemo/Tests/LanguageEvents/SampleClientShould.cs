@@ -1,10 +1,7 @@
 ﻿using DomainEventsDemo.LanguageEvents;
-using DomainEventsDemo.Model.Events;
-using DomainEventsDemo.SharedKernel.StaticApproach;
 using NUnit.Framework;
-using StructureMap;
 
-namespace DomainEventsDemo.Tests
+namespace DomainEventsDemo.Tests.LanguageEvents
 {
     [TestFixture]
     public class SampleClientShould
