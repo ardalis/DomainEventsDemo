@@ -25,6 +25,8 @@ namespace DomainEventsDemo.Infrastructure.Data
         // successful save
         public void SaveChanges()
         {
+            // save changes - for demo purposes we're skipping this part
+
             // dispatch events on any entities that have changes detected
             var changedCustomers = _customers;
             foreach (var customer in changedCustomers)
@@ -35,7 +37,7 @@ namespace DomainEventsDemo.Infrastructure.Data
                 }
             }
 
-            // save changes - for demo purposes we're skipping this part
+            
         }
     }
 }
